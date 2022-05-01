@@ -1,0 +1,3 @@
+C:\Users\Martin\src\C#\SkiiApp\SkiiApp\obj\Debug\SkiiApp.csproj.AssemblyReference.cache
+C:\Users\Martin\src\C#\SkiiApp\SkiiApp\obj\Debug\SkiiApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Martin\src\C#\SkiiApp\SkiiApp\obj\Debug\SkiiApp.csproj.CoreCompileInputs.cache

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5Ggk+3sDw8AGu5P4TgeI1ao3Pcrq1UHLd5ckIxLD3GA=",
+  "Source": "SkiiApp.Web",
+  "BasePath": "_content/SkiiApp.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

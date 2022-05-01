@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "SkiiApp.Data/1.0.0": {
+        "runtime": {
+          "SkiiApp.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SkiiApp.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
