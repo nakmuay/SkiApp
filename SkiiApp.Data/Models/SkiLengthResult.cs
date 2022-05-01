@@ -1,9 +1,9 @@
 ﻿namespace SkiiApp.Data.Models
 {
-    public sealed class SkiiLengthResult
+    public sealed class SkiLengthResult
     {
 
-        public SkiiLengthResult(int length)
+        public SkiLengthResult(int length)
         {
             this.Length = length;
         }

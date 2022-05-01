@@ -4,16 +4,16 @@
     using SkiiApp.Services.Interfaces;
     using SkiiApp.Services.Internal;
 
-    public sealed class SkiiLengthService : ISkiiLengthService
+    public sealed class SkiLengthService : ISkiLengthService
     {
-        private ISkiiLengthComputerFactorySelector _factorySelector;
+        private ISkiLengthComputerFactorySelector _factorySelector;
 
-        public SkiiLengthService(ISkiiLengthComputerFactorySelector factorySelector)
+        public SkiLengthService(ISkiLengthComputerFactorySelector factorySelector)
         {
             this._factorySelector = factorySelector;
         }
 
-        public Either<string, SkiiLengthResult> GetSkiiLength(int age, int height, SkiiType type)
+        public Either<string, SkiLengthResult> GetSkiLength(int age, int height, SkiType type)
         {
             var factory = this._factorySelector.Select(age);
             var computer = factory.Create();

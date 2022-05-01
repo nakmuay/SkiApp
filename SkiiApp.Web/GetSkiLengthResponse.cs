@@ -2,25 +2,25 @@
 {
     using SkiiApp.Web.Errors;
 
-    internal sealed class GetSkiiLengthResponse
+    internal sealed class GetSkiLengthResponse
     {
-        private GetSkiiLengthResponse(int? skiiLength, IEnumerable<ApiError>? errors)
+        private GetSkiLengthResponse(int? skiLength, IEnumerable<ApiError>? errors)
         {
-            this.SkiiLength = skiiLength;
+            this.SkiLength = skiLength;
             this.Errors = errors;
         }
 
-        public int? SkiiLength { get; }
+        public int? SkiLength { get; }
         public IEnumerable<ApiError>? Errors { get; }
 
         internal class Builder
         {
             private List<ApiErrorBuilder> _nestedBuilders = new();
-            private int? _skiiLength;
+            private int? _skiLength;
 
-            public Builder WithSkiiLength(int skiiLength)
+            public Builder WithSkiLength(int skiLength)
             {
-                this._skiiLength = skiiLength;
+                this._skiLength = skiLength;
                 return this;
             }
 
@@ -31,10 +31,10 @@
                 return nestedBuilder;
             }
 
-            public static implicit operator GetSkiiLengthResponse(Builder builder)
+            public static implicit operator GetSkiLengthResponse(Builder builder)
             {
                 var errors = builder._nestedBuilders.Select(b => b.Build());
-                return new GetSkiiLengthResponse(builder._skiiLength, errors.Any() ? errors : null);
+                return new GetSkiLengthResponse(builder._skiLength, errors.Any() ? errors : null);
             }
 
             internal sealed class ApiErrorBuilder {

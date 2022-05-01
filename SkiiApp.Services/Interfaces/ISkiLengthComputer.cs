@@ -3,8 +3,8 @@
     using SkiiApp.Data.Models;
     using SkiiApp.Services.Internal;
 
-    public interface ISkiiLengthComputer
+    public interface ISkiLengthComputer
     {
-        public Either<string, SkiiLengthResult> Compute(int height, SkiiType type);
+        public Either<string, SkiLengthResult> Compute(int height, SkiType type);
     }
 }

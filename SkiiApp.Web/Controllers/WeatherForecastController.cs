@@ -8,20 +8,20 @@ namespace SkiiApp.Web.Controllers
     public sealed class WeatherForecastController : ControllerBase
     {
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly ISkiiLengthService _skiiLengthService;
+        private readonly ISkiLengthService _skiLengthService;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, ISkiiLengthService skiiLengthService)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ISkiLengthService skiLengthService)
         {
             this._logger = logger;
-            this._skiiLengthService = skiiLengthService;
+            this._skiLengthService = skiLengthService;
         }
 
         [HttpGet]
-        [Route("api/computeskiilength")]
-        public ActionResult GetSkiiLength(int age, int height, string skiiType)
+        [Route("api/computeskilength")]
+        public ActionResult GetSkiLength(int age, int height, string skiType)
         {
-            var responseBuilder = new GetSkiiLengthResponse.Builder();
-            GetSkiiLengthResponse? response = null;
+            var responseBuilder = new GetSkiLengthResponse.Builder();
+            GetSkiLengthResponse? response = null;
 
             var hasValidParameters = true;
             if (age < 0)
@@ -42,22 +42,22 @@ namespace SkiiApp.Web.Controllers
                     .WithDetailedErrorMessage($"A non-negative {QueryParameters.HeightParameterName} is required, was: {height}.");
             }
 
-            var skiiTypeOpt = SkiiType.Classic;
-            switch (skiiType.ToUpperInvariant())
+            var skiTypeOpt = SkiType.Classic;
+            switch (skiType.ToUpperInvariant())
             {
                 case "CLASSSIC":
-                    skiiTypeOpt = SkiiType.Classic;
+                    skiTypeOpt = SkiType.Classic;
                     break;
 
                 case "FREESTYLE":
-                    skiiTypeOpt = SkiiType.Freestyle;
+                    skiTypeOpt = SkiType.Freestyle;
                     break;
                 default:
                     hasValidParameters = false;
                     responseBuilder
-                        .WithParameterError(QueryParameters.SkiiTypeParameterName)
-                        .WithShortErrorMessage($"Invalid {QueryParameters.SkiiTypeParameterName} parameter")
-                        .WithDetailedErrorMessage($"Only {nameof(SkiiType.Classic)} and {nameof(SkiiType.Freestyle)} is supported for the {QueryParameters.SkiiTypeParameterName} parameter, was: {skiiType}.");
+                        .WithParameterError(QueryParameters.SkiTypeParameterName)
+                        .WithShortErrorMessage($"Invalid {QueryParameters.SkiTypeParameterName} parameter")
+                        .WithDetailedErrorMessage($"Only {nameof(SkiType.Classic)} and {nameof(SkiType.Freestyle)} is supported for the {QueryParameters.SkiTypeParameterName} parameter, was: {skiType}.");
                     break;
             }
 
@@ -68,7 +68,7 @@ namespace SkiiApp.Web.Controllers
             }
 
 
-            var result = this._skiiLengthService.GetSkiiLength(age, height, skiiTypeOpt);
+            var result = this._skiLengthService.GetSkiLength(age, height, skiTypeOpt);
             result.Match(
                 left =>
                 {
@@ -76,7 +76,7 @@ namespace SkiiApp.Web.Controllers
                 },
                 right =>
                 {
-                    response = responseBuilder.WithSkiiLength(right.Length);
+                    response = responseBuilder.WithSkiLength(right.Length);
                 });
 
             return Ok(response);

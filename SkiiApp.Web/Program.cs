@@ -6,10 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddTransient<ISkiiLengthService>(
+builder.Services.AddTransient<ISkiLengthService>(
     register => {
-        var factorySelector = new SkiiLengthComputerFactorySelector(new ChildrensSkiiLengthComputerFactory(), new AdultsSkiiLengthComputerFactory());
-        return new SkiiLengthService(factorySelector);
+        var factorySelector = new SkiLengthComputerFactorySelector(new ChildrensSkiLengthComputerFactory(), new AdultsSkiLengthComputerFactory());
+        return new SkiLengthService(factorySelector);
         });
 
 var app = builder.Build();

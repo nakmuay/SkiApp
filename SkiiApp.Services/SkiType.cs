@@ -1,6 +1,6 @@
 ﻿namespace SkiiApp.Services
 {
-    public enum SkiiType
+    public enum SkiType
     {
         Classic = 0,
 

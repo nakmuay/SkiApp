@@ -6,6 +6,6 @@
 
         public static readonly string HeightParameterName = "height";
 
-        public static readonly string SkiiTypeParameterName = "skiiType";
+        public static readonly string SkiTypeParameterName = "skiType";
     }
 }

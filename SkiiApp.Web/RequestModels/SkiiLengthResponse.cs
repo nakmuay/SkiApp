@@ -2,11 +2,11 @@
 {
     public sealed class SkiiLengthResponse
     {
-        public SkiiLengthResponse(int skiiLength)
+        public SkiiLengthResponse(int skiLength)
         {
-            SkiiLength = skiiLength;
+            SkiLength = skiLength;
         }
 
-        public int SkiiLength { get; set;  }
+        public int SkiLength { get; set;  }
     }
 }
