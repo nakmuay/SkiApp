@@ -5,6 +5,6 @@
 
     public interface ISkiiLengthService
     {
-        public Either<string, SkiiLengthResult> GetSkiiLength(int age, int height);
+        public Either<string, SkiiLengthResult> GetSkiiLength(int age, int height, SkiiType type);
     }
 }

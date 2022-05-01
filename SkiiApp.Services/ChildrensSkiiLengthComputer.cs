@@ -6,7 +6,7 @@
 
     public sealed class ChildrensSkiiLengthComputer : ISkiiLengthComputer
     {
-        public Either<string, SkiiLengthResult> Compute(int height)
+        public Either<string, SkiiLengthResult> Compute(int height, SkiiType type)
         {
             return Either<string, SkiiLengthResult>.Right(new SkiiLengthResult(height + 10));
         }

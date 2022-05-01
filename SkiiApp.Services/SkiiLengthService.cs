@@ -13,11 +13,11 @@
             this._factorySelector = factorySelector;
         }
 
-        public Either<string, SkiiLengthResult> GetSkiiLength(int age, int height)
+        public Either<string, SkiiLengthResult> GetSkiiLength(int age, int height, SkiiType type)
         {
             var factory = this._factorySelector.Select(age);
             var computer = factory.Create();
-            return computer.Compute(height);
+            return computer.Compute(height, type);
         }
     }
 

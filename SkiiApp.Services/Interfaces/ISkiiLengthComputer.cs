@@ -5,6 +5,6 @@
 
     public interface ISkiiLengthComputer
     {
-        public Either<string, SkiiLengthResult> Compute(int height);
+        public Either<string, SkiiLengthResult> Compute(int height, SkiiType type);
     }
 }
