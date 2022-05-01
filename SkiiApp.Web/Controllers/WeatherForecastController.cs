@@ -45,7 +45,7 @@ namespace SkiiApp.Web.Controllers
             var skiTypeOpt = SkiType.Classic;
             switch (skiType.ToUpperInvariant())
             {
-                case "CLASSSIC":
+                case "CLASSIC":
                     skiTypeOpt = SkiType.Classic;
                     break;
 
