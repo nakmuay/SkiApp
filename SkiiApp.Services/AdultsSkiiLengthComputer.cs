@@ -29,7 +29,7 @@ namespace SkiiApp.Services
                     break;
 
                 default:
-                    throw new NotSupportedException($"{type} is not a supprted {nameof(SkiiType)} value.");
+                    throw new NotSupportedException($"{type} is not a supported {nameof(SkiiType)} value.");
             }
 
 
