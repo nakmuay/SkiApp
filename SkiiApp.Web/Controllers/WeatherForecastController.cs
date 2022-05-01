@@ -29,8 +29,8 @@ namespace SkiiApp.Web.Controllers
                 hasValidParameters = false;
 
                 responseBuilder.WithParameterError(QueryParameters.AgeParameterName)
-                    .WithShortErrorMessage("Invalid age parameter.")
-                    .WithDetailedErrorMessage($"A non-negative age is required, was  : {age}");
+                    .WithShortErrorMessage($"Invalid {QueryParameters.AgeParameterName} parameter.")
+                    .WithDetailedErrorMessage($"A non-negative {QueryParameters.AgeParameterName} is required, was: {age}.");
             }
 
             if (height < 0)
@@ -38,8 +38,8 @@ namespace SkiiApp.Web.Controllers
                 hasValidParameters = false;
 
                 responseBuilder.WithParameterError(QueryParameters.HeightParameterName)
-                    .WithShortErrorMessage("Invalid height parameter.")
-                    .WithDetailedErrorMessage($"A non-negative height is required, was  : {height}");
+                    .WithShortErrorMessage($"Invalid {QueryParameters.HeightParameterName} parameter.")
+                    .WithDetailedErrorMessage($"A non-negative {QueryParameters.HeightParameterName} is required, was: {height}.");
             }
 
             var skiiTypeOpt = SkiiType.Classic;
@@ -56,8 +56,8 @@ namespace SkiiApp.Web.Controllers
                     hasValidParameters = false;
                     responseBuilder
                         .WithParameterError(QueryParameters.SkiiTypeParameterName)
-                        .WithShortErrorMessage("Invalid skiiType parameter")
-                        .WithDetailedErrorMessage($"Only {nameof(SkiiType.Classic)} and {nameof(SkiiType.Freestyle)} is suppoerted for the skiiType parameter, was {skiiType}.");
+                        .WithShortErrorMessage($"Invalid {QueryParameters.SkiiTypeParameterName} parameter")
+                        .WithDetailedErrorMessage($"Only {nameof(SkiiType.Classic)} and {nameof(SkiiType.Freestyle)} is supported for the {QueryParameters.SkiiTypeParameterName} parameter, was: {skiiType}.");
                     break;
             }
 
