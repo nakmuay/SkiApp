@@ -79,7 +79,8 @@
 
             internal sealed class ApiInternalErrorBuilder : ApiErrorBuilder
             {
-                public ApiInternalErrorBuilder(Builder owner) : base(owner)
+                public ApiInternalErrorBuilder(Builder owner)
+                    : base(owner)
                 {
                 }
 
@@ -98,7 +99,8 @@
             {
                 private readonly string _parameterName;
 
-                public ApiParameterValidationBuilder(Builder owner, string parameterName) : base(owner)
+                public ApiParameterValidationBuilder(Builder owner, string parameterName)
+                    : base(owner)
                 {
                     this._parameterName = parameterName;
                 }

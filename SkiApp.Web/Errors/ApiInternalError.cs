@@ -2,7 +2,8 @@
 {
     internal sealed class ApiInternalError : ApiError
     {
-        public ApiInternalError(string? shortMessage, string? detailedMessage) : base(shortMessage, detailedMessage)
+        public ApiInternalError(string? shortMessage, string? detailedMessage)
+            : base(shortMessage, detailedMessage)
         {
         }
     }
