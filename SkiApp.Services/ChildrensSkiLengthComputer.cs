@@ -10,6 +10,8 @@
 
         public Either<string, SkiLengthResult> Compute(int height, SkiType type)
         {
+            Robustness.ValidateArgumentNonNegative(nameof(height), height);
+
             // Assume minimum ski length is 1m.
             var skiLength = Math.Max(height, MinSkiLength);
             if (skiLength > 192)

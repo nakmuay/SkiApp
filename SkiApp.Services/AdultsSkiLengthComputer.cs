@@ -14,6 +14,8 @@
 
         public Either<string, SkiLengthResult> Compute(int height, SkiType type)
         {
+            Robustness.ValidateArgumentNonNegative(nameof(height), height);
+
             int skiLength = 0;
             switch (type)
             {

@@ -1,6 +1,7 @@
 ﻿namespace SkiApp.Services
 {
     using SkiApp.Services.Interfaces;
+    using SkiApp.Services.Internal;
 
     public sealed class SkiLengthComputerFactorySelector : ISkiLengthComputerFactorySelector
     {
@@ -15,12 +16,9 @@
 
         public ISkiLengthComputerFactory Select(int age)
         {
-            if (age <= 4)
-            {
-                return this._childrensSkiLengthFactory;
-            }
+            Robustness.ValidateArgumentNonNegative(nameof(age), age);
 
-            return this._adultsSkiLengthFactory;
+            return age <= 4 ? this._childrensSkiLengthFactory : this._adultsSkiLengthFactory;
         }
     }
 }

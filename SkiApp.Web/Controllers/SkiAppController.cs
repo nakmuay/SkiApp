@@ -54,6 +54,7 @@ namespace SkiApp.Web.Controllers
                     break;
                 default:
                     hasValidParameters = false;
+
                     responseBuilder
                         .WithParameterError(QueryParameters.SkiTypeParameterName)
                         .WithShortErrorMessage($"Invalid {QueryParameters.SkiTypeParameterName} parameter")
