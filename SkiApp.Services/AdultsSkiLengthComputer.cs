@@ -28,9 +28,18 @@
 
                 case (SkiType.Freestyle):
                     // Scale length addition linearly between 10 and 15cm in the height range 100 - 177cm.
-                    skiLength = (int)(height + 10 + 0.028d * height);
-                    skiLength = Math.Clamp(skiLength, MinSkiLength, MaxFreestyleSkiLength);
+                    try
+                    {
+                        skiLength = checked((int)(height + 10 + 0.028d * height));
+                        skiLength = Math.Clamp(skiLength, MinSkiLength, MaxFreestyleSkiLength);
+                    } 
+                    catch(OverflowException)
+                    {
+                        return Either<string, SkiLengthResult>.Left("The ski length computation failed (the computed value was too large).");
+                    }
+
                     break;
+
 
                 default:
                     throw new NotSupportedException($"{type} is not a supported {nameof(SkiType)} value.");
