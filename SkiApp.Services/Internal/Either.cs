@@ -1,15 +1,10 @@
 ﻿namespace SkiApp.Services.Internal
 {
-    public sealed class Either<TLeft, TRight> where TLeft : class where TRight : class
+    public struct Either<TLeft, TRight> where TLeft : class where TRight : class
     {
         private readonly TLeft? _left;
         private readonly TRight? _right;
         private readonly bool _isLeft;
-        private readonly bool _isRight;
-
-        public bool IsLeft => this._isLeft;
-
-        private bool IsRight => this._isRight;
 
         public static Either<TLeft, TRight> Left(TLeft left) => new(left, null);
 
@@ -20,7 +15,6 @@
             this._left = left;
             this._right = right;
             this._isLeft = left != null;
-            this._isRight = left == null;
         }
 
         public void Match(Action<TLeft> left, Action<TRight> right)
