@@ -38,7 +38,6 @@ namespace SkiApp.Web.Controllers
                 hasValidParameters = false;
 
                 responseBuilder.WithParameterError(QueryParameters.HeightParameterName)
-                    .WithShortErrorMessage($"Invalid {QueryParameters.HeightParameterName} parameter.")
                     .WithDetailedErrorMessage($"A non-negative {QueryParameters.HeightParameterName} is required, was: {height}.");
             }
 
@@ -57,7 +56,6 @@ namespace SkiApp.Web.Controllers
 
                     responseBuilder
                         .WithParameterError(QueryParameters.SkiTypeParameterName)
-                        .WithShortErrorMessage($"Invalid {QueryParameters.SkiTypeParameterName} parameter")
                         .WithDetailedErrorMessage($"Only {nameof(SkiType.Classic)} and {nameof(SkiType.Freestyle)} is supported for the {QueryParameters.SkiTypeParameterName} parameter, was: {skiType}.");
                     break;
             }
@@ -73,7 +71,11 @@ namespace SkiApp.Web.Controllers
             result.Match(
                 left =>
                 {
-                    //response = responseBuilder.WithShortErrorMessage(left);
+                    responseBuilder.WithInternalError()
+                    .WithShortErrorMessage("Something went wrong")
+                    .WithDetailedErrorMessage(left);
+
+                    response = responseBuilder;
                 },
                 right =>
                 {
