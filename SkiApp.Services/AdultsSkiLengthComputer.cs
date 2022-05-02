@@ -1,9 +1,9 @@
-﻿using SkiApp.Data.Models;
-using SkiApp.Services.Interfaces;
-using SkiApp.Services.Internal;
-
-namespace SkiApp.Services
+﻿namespace SkiApp.Services
 {
+    using SkiApp.Data.Models;
+    using SkiApp.Services.Interfaces;
+    using SkiApp.Services.Internal;
+
     public sealed class AdultsSkiLengthComputer : ISkiLengthComputer
     {
         private const int MinSkiLength = 100;

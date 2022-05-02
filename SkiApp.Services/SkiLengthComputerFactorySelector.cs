@@ -1,7 +1,7 @@
-﻿using SkiApp.Services.Interfaces;
-
-namespace SkiApp.Services
+﻿namespace SkiApp.Services
 {
+    using SkiApp.Services.Interfaces;
+
     public sealed class SkiLengthComputerFactorySelector : ISkiLengthComputerFactorySelector
     {
         private readonly ISkiLengthComputerFactory _childrensSkiLengthFactory;
