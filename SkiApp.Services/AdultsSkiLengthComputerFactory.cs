@@ -2,7 +2,7 @@
 {
     using SkiApp.Services.Interfaces;
 
-    public class AdultsSkiLengthComputerFactory : ISkiLengthComputerFactory
+    public sealed class AdultsSkiLengthComputerFactory : ISkiLengthComputerFactory
     {
         public ISkiLengthComputer Create()
         {
