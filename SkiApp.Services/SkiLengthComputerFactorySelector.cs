@@ -3,8 +3,13 @@
     using SkiApp.Services.Interfaces;
     using SkiApp.Services.Internal;
 
+    /// <summary>
+    /// Class used selecting computer factories.
+    /// </summary>
     public sealed class SkiLengthComputerFactorySelector : ISkiLengthComputerFactorySelector
     {
+        // This class is actually a factory-factory but that name doesn't really make sense.
+
         private readonly ISkiLengthComputerFactory _childrensSkiLengthFactory;
         private readonly ISkiLengthComputerFactory _adultsSkiLengthFactory;
 

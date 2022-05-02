@@ -4,6 +4,9 @@
     using SkiApp.Services.Interfaces;
     using SkiApp.Services.Internal;
 
+    /// <summary>
+    /// Class used for computing ski length for young children (age 0 - 4 years).
+    /// </summary>
     public sealed class ChildrensSkiLengthComputer : ISkiLengthComputer
     {
         private const int MinSkiLength = 100;
