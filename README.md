@@ -1,2 +1,2 @@
-# SkiiApp
+# SkiApp
 Stratsys reqruitment test
